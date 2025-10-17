@@ -1,4 +1,4 @@
-### 背包 backpack交易所刷量程序
+### 背包 backpack交易所刷量程序 （记得加入我们战队：https://backpack.exchange/join/996）
 
 当前程序是以简单的做市方式来在Backpack交易所数量，支持开启对冲，当前主要是使用lighter对冲。
 
@@ -15,6 +15,13 @@ ticker、quantity、max_position_count，
 挂单买的数量、最大持有的数量。 这三个都很重要，刚开始运行的时候
 一定要严格限定最大头寸！！！！！！
 
+### 加入Backpack战队，享受更低手续费
+https://backpack.exchange/join/996
+
+一起为10万分目标而奋斗！！
+
+### 合作共赢
+如果想要有进一步的合作，或者想完全托管，可以私我TG。
 
 ### 请喝一杯咖啡
 USDT TRC2.0 
@@ -25,5 +32,4 @@ TQmPdFSz4TYcr8AnvbYqck4KPR2cRkRhBp
 
 捐赠超过150U的朋友，可以添加本人TG：
 ![img_1.png](img_1.png)
-
 可以免费指导一次！！
