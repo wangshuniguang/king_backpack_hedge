@@ -28,8 +28,7 @@ USDT TRC2.0
 地址如下：
 TQmPdFSz4TYcr8AnvbYqck4KPR2cRkRhBp
 
-![img.png](img.png)
+捐赠超过150U的朋友，可以添加本人TG，可以免费指导一次！！
 
-捐赠超过150U的朋友，可以添加本人TG：
+![img.png](img.png)
 ![img_1.png](img_1.png)
-可以免费指导一次！！
