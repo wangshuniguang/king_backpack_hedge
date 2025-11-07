@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 
-import asyncio
-from decimal import Decimal, ROUND_HALF_UP
-from typing import Dict, Any, List, Optional, Tuple
+from decimal import Decimal, ROUND_DOWN, ROUND_HALF_UP
+from typing import Dict, List, Tuple
 
 from bpx.account import Account
 from bpx.constants.enums import OrderTypeEnum, TimeInForceEnum
 from bpx.public import Public
-
-from decimal import Decimal, ROUND_DOWN, ROUND_UP, ROUND_HALF_UP
 
 from helpers.logger import setup_logger
 from model.order_info import OrderInfo
@@ -16,6 +13,31 @@ from model.order_result import OrderResult
 from model.trading_config import TradingConfig
 
 logger = setup_logger('backpack_client')
+
+
+class CustomAccountClient:
+    def __init__(self, account_client, broker_id='2110'):
+        self.account_client = account_client
+        self.broker_id = broker_id
+        self.logger = logger
+
+    def execute_order(self, *args, **kwargs):
+        request_config = self.account_client.__class__.__bases__[0].execute_order(
+            self.account_client, *args, **kwargs
+        )
+
+        if hasattr(request_config, 'headers'):
+            request_config.headers["X-BROKER-ID"] = self.broker_id
+
+        return self.account_client.http_client.post(
+            url=request_config.url,
+            headers=request_config.headers,
+            data=request_config.data,
+        )
+
+    # 代理其他方法
+    def __getattr__(self, name):
+        return getattr(self.account_client, name)
 
 
 class BackpackClient(object):
@@ -35,8 +57,7 @@ class BackpackClient(object):
             secret_key=self.secret_key
         )
 
-        self._order_update_handler = None
-        self.ws_manager = None
+        self.custom_client = CustomAccountClient(self.account_client)
         self.logger = logger
 
     def round_to_tick(self, price) -> Decimal:
@@ -93,7 +114,7 @@ class BackpackClient(object):
         for i in range(order_num):
             order_price = Decimal(basic_bid) - base * (i + 1)
             try:
-                order_result = self.account_client.execute_order(
+                order_result = self.custom_client.execute_order(
                     symbol=contract_id,
                     side=side,
                     order_type=OrderTypeEnum.LIMIT,
@@ -156,7 +177,7 @@ class BackpackClient(object):
         for i in range(order_num):
             order_price = Decimal(basic_ask) + base * (i + 1)
             try:
-                order_result = self.account_client.execute_order(
+                order_result = self.custom_client.execute_order(
                     symbol=contract_id,
                     side=side,
                     order_type=OrderTypeEnum.LIMIT,

@@ -1,8 +1,8 @@
-### 背包 backpack交易所刷量程序 （记得加入我们战队：https://backpack.exchange/join/996）
+### 背包 backpack交易所做市策略 （记得加入我们战队：https://backpack.exchange/join/996）
 
-当前程序是以简单的做市方式来在Backpack交易所数量，支持开启对冲，当前主要是使用lighter对冲。
+当前程序是以简单的做市方式来在Backpack交易所交易，支持开启对冲，当前主要是使用lighter对冲。
 
-可以不使用对冲模式运行，对冲程序和主刷量程序是独立的。建议先忽略lighter对冲的king_of_hedge.py
+可以不使用对冲模式运行，对冲程序和主做市程序是独立的。建议先忽略lighter对冲的king_of_hedge.py
 先从简单的Backpack单交易所刷量开始。
 
 配置的时候需要配置config/config.py中的backpack AK就
@@ -20,15 +20,9 @@ https://backpack.exchange/join/996
 
 一起为10万分目标而奋斗！！
 
-### 合作共赢
-如果想要有进一步的合作，或者想完全托管，可以私我TG。
+### 联系我们
+遇到任何问题可以TG或者推特上联系我们：
+X账号：@dog_gold70695
 
-### 请喝一杯咖啡
-USDT TRC2.0 
-地址如下：
-TQmPdFSz4TYcr8AnvbYqck4KPR2cRkRhBp
-
-捐赠超过150U的朋友，可以添加本人TG，可以免费指导一次！！
-
-![img.png](img.png)
+TG账号：
 ![img_1.png](img_1.png)
