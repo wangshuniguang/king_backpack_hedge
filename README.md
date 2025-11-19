@@ -1,5 +1,14 @@
 ### 背包 backpack交易所做市策略 （记得加入我们战队：https://backpack.exchange/join/996）
 
+
+#### 特别提示！！！
+最新版本开源：https://github.com/wangshuniguang/ak47_backpack_market_maker/tree/master
+
+该策略是完全接近真正的做市策略，并且经受了3~4亿交易量的实践考验，效果
+非常的好，实际磨损无论极端行情都接近于1万交易量1U磨损，对于不少品种甚至
+都能做到磨损万0.5U，强烈推荐！
+****************************
+
 当前程序是以简单的做市方式来在Backpack交易所交易，支持开启对冲，当前主要是使用lighter对冲。
 
 可以不使用对冲模式运行，对冲程序和主做市程序是独立的。建议先忽略lighter对冲的king_of_hedge.py
